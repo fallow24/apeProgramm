@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="362.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Settings">
+   <children>
+      <Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="301.0" prefWidth="509.0">
+        <panes>
+          <TitledPane animated="false" prefHeight="200.0" prefWidth="509.0" text="Alphabet">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="132.0" prefWidth="507.0">
+                     <children>
+                        <VBox layoutX="2.0" layoutY="46.0" prefHeight="149.0" prefWidth="503.0">
+                           <children>
+                              <AnchorPane prefHeight="149.0" prefWidth="503.0">
+                                 <children>
+                                    <CheckBox fx:id="spaceCheckbox" layoutX="108.0" layoutY="11.0" mnemonicParsing="false" text="also print spaces (&quot; &quot;)" />
+                                    <CheckBox fx:id="umlautCheckbox" layoutX="108.0" layoutY="54.0" mnemonicParsing="false" text="also print Ä, Ü and Ö" />
+                                    <CheckBox fx:id="customCheckbox" layoutX="108.0" layoutY="96.0" mnemonicParsing="false" onAction="#customClicked" text="custom:" />
+                                    <TextField fx:id="customInput" layoutX="191.0" layoutY="91.0" prefHeight="31.0" prefWidth="306.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <Label layoutX="54.0" layoutY="14.0" text="The default Alphabet is: ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Performance">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="24.0" text="Printing Speed:" />
+                        <Slider fx:id="slider" blockIncrement="5.0" layoutX="144.0" layoutY="16.0" max="50.0" min="5.0" prefHeight="18.0" prefWidth="349.0" showTickMarks="true" value="30.0" />
+                        <Label layoutX="144.0" layoutY="35.0" text="fast" />
+                        <Label layoutX="458.0" layoutY="35.0" text="slow" />
+                        <Label layoutX="12.0" layoutY="56.0" prefHeight="79.0" prefWidth="484.0" text="Consider that a faster printing speed may cause an instable printing and time measuring thread. If you are excperiencing any performance issues, try slowing down the printing speed..." textAlignment="JUSTIFY" wrapText="true" />
+                        <CheckBox fx:id="turboCheckBox" layoutX="174.0" layoutY="153.0" mnemonicParsing="false" text="... or try turbo mode" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Format">
+            <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="183.0" prefWidth="247.0">
+                           <children>
+                              <SplitPane dividerPositions="0.15469613259668508" orientation="VERTICAL" prefHeight="183.0" prefWidth="240.0">
+                                <items>
+                                    <Label text="Font" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <HBox layoutY="24.0" prefHeight="31.0" prefWidth="245.0">
+                                             <children>
+                                                <Label text="size:">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="fontSize" prefHeight="67.0" prefWidth="189.0" promptText="font size" text="12">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <Button layoutX="96.0" layoutY="107.0" mnemonicParsing="false" text="reset" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="183.0" prefWidth="237.0">
+                           <children>
+                              <SplitPane dividerPositions="0.15469613259668508" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                <items>
+                                    <Label text="Time measurement" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <HBox layoutY="23.0" prefHeight="22.0" prefWidth="237.0">
+                                             <children>
+                                                <Label prefHeight="41.0" prefWidth="213.0" text="digits after comma:">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField prefHeight="41.0" prefWidth="140.0" promptText="digits" text="2">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Button layoutX="91.0" layoutY="107.0" mnemonicParsing="false" text="reset" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <AnchorPane prefHeight="45.0" prefWidth="509.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button layoutX="222.0" layoutY="16.0" mnemonicParsing="false" onAction="#onReset" text="reset all">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="35.0" layoutY="16.0" mnemonicParsing="false" onAction="#onApply" text="apply">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="420.0" layoutY="16.0" mnemonicParsing="false" onAction="#onCancel" text="cancel">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</VBox>

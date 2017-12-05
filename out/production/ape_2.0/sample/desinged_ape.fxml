@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#openSettings" text="Settings" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <SplitPane dividerPositions="0.5" minHeight="0.0" minWidth="0.0" orientation="VERTICAL" prefHeight="345.0" prefWidth="91.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <Button fx:id="start" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="74.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onStartClicked" text="Start" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Calibri Light" size="27.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="stop" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="74.0" minWidth="0.0" mnemonicParsing="false" onAction="#onStopClicked" prefHeight="167.0" prefWidth="158.0" text="Stop" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Calibri Light" size="27.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </left>
+   <bottom>
+      <SplitPane dividerPositions="0.4144645340751043" prefHeight="0.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <items>
+            <Label fx:id="time" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="372.0" text="Meassured Time:                                             ">
+               <padding>
+                  <Insets right="130.0" />
+               </padding>
+            </Label>
+            <Label fx:id="status" prefHeight="21.0" prefWidth="381.0" text="Status:" />
+        </items>
+      </SplitPane>
+   </bottom>
+   <right>
+      <ProgressIndicator fx:id="progress" visible="false" BorderPane.alignment="BOTTOM_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin></ProgressIndicator>
+   </right>
+   <center>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+            <TextField fx:id="input" promptText="text to search for..." />
+            <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
